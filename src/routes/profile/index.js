@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import './style.css';
 
 export default class Profile extends Component {
-	state = {
-		time: Date.now(),
-		count: 10
-	};
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      time: Date.now(),
+      count: 10,
+      user: props.match.params.user ? props.match.params.user : "me"
+    };
+  }
 
 	// gets called when this route is navigated to
 	componentDidMount() {
@@ -27,39 +32,20 @@ export default class Profile extends Component {
 		this.setState({ count: this.state.count+1 });
 	};
 
-	// Note: `user` comes from the URL, courtesy of our router
 	render() {
 		return (
 			<div className="profile">
-				<h1>Profile: [user goes here]</h1>
-				<p>This is the user profile for a user named [user goes here].</p>
+				<h1>Profile: {this.state.user}</h1>
+				<p>This is the user profile for a user named {this.state.user}.</p>
 
-				<div>Current time: [tbd]</div>
-
-				<p>
-					<button onClick={this.increment}>Click Me</button>
-					{' '}
-					Clicked [tbd] times.
-				</p>
-			</div>
-		);
-	}
-	/*
-	render({ user }, { time, count }) {
-		return (
-			<div class="profile">
-				<h1>Profile: {user}</h1>
-				<p>This is the user profile for a user named { user }.</p>
-
-				<div>Current time: {new Date(time).toLocaleString()}</div>
+				<div>Current time: {new Date(this.state.time).toLocaleString()}</div>
 
 				<p>
 					<button onClick={this.increment}>Click Me</button>
 					{' '}
-					Clicked {count} times.
+					Clicked {this.state.count} times.
 				</p>
 			</div>
 		);
 	}
-	*/
 }
