@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import Header from './header';
 import Home from '../routes/home';
@@ -20,11 +20,9 @@ export default class App extends Component {
 		return (
 			<div id="app">
 				<Header />
-				<Switch>
-  				<Route exact path="/" component={Home}/>
-  				<Route exact path="/profile/" component={Profile} />
-  				<Route path="/profile/:user" component={Profile} />
-				</Switch>
+				<Route exact path="/" component={Home}/>
+				<Route exact path="/profile/" component={Profile} />
+				<Route path="/profile/:user" component={Profile} />
 			</div>
 		);
 	}
