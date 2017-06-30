@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './style.css';
 
 export default class Header extends Component {
@@ -8,9 +8,9 @@ export default class Header extends Component {
 			<header className="header">
 				<h1>React App</h1>
 				<nav>
-					<Link className="active" to="/">Home</Link>
-					<Link className="active" to="/profile">Me</Link>
-					<Link className="active" to="/profile/john">John</Link>
+					<NavLink exact activeClassName="active" to="/">Home</NavLink>
+					<NavLink exact activeClassName="active" to="/profile">Me</NavLink>
+					<NavLink activeClassName="active" to="/profile/john">John</NavLink>
 				</nav>
 			</header>
 		);
