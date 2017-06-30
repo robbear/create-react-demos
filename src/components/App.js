@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
-import './App.css';
+import { Route, Switch } from 'react-router-dom';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+import Header from './header';
+import Home from '../routes/home';
+import Profile from '../routes/profile';
+// import Home from 'async!./home';
+// import Profile from 'async!./profile';
+
+export default class App extends Component {
+	/** Gets fired when the route changes.
+	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
+	 *	@param {string} event.url	The newly routed URL
+	 */
+	handleRoute = e => {
+		this.currentUrl = e.url;
+	};
+
+	render() {
+		return (
+			<div id="app">
+				<Header />
+				<Switch>
+  				<Route exact path="/" component={Home}/>
+  				<Route path="/profile/" user="me" component={Profile} />
+  				<Route path="/profile/:user" component={Profile} />
+				</Switch>
+			</div>
+		);
+	}
 }
-
-export default App;
