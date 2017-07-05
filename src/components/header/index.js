@@ -11,6 +11,7 @@ export default class Header extends Component {
 					<NavLink exact activeClassName="active" to="/">Home</NavLink>
 					<NavLink exact activeClassName="active" to="/profile">Me</NavLink>
 					<NavLink activeClassName="active" to="/profile/john">John</NavLink>
+					<NavLink activeClassName="active" to="/demos/listbox">ListBox</NavLink>
 				</nav>
 			</header>
 		);

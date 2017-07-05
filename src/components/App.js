@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import Header from './header';
 import Home from '../routes/home';
 import Profile from '../routes/profile';
+import ListBoxDemo from '../routes/listboxdemo';
 // import Home from 'async!./home';
 // import Profile from 'async!./profile';
 
@@ -23,6 +24,7 @@ export default class App extends Component {
 				<Route exact path="/" component={Home}/>
 				<Route exact path="/profile/" component={Profile} />
 				<Route path="/profile/:user" component={Profile} />
+				<Route exact path="/demos/listbox" component={ListBoxDemo} />
 			</div>
 		);
 	}
