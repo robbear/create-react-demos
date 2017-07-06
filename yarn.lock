@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@elix/elix@elix/elix#master":
+  version "1.0.0-dev.YYYYMMDD"
+  resolved "https://codeload.github.com/elix/elix/tar.gz/ce7753d7e444bf8d83b76e702cc1451e11ee68f3"
+
 abab@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.3.tgz#b81de5f7274ec4e756d797cd834f303642724e5d"
